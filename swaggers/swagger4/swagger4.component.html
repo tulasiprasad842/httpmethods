@@ -1,0 +1,63 @@
+<!-- <table mat-table [dataSource]="dataSource" matSort (matSortChange)="sortData($event)" class="mat-elevation-z8">   
+
+      
+        <ng-container matColumnDef="interfaceCode">
+                     <th mat-header-cell *matHeaderCellDef mat-sort-header>interfaceCode</th>
+                     <td mat-cell *matCellDef="let element">{{element.interfaceCode}}</td>
+         </ng-container>
+
+         
+        <ng-container matColumnDef="interfaceDesc">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>interfaceDesc</th>
+                <td mat-cell *matCellDef="let element">{{element.interfaceDesc==null? 'N/A':element.interfaceDesc}}</td>
+       </ng-container>
+
+       <ng-container matColumnDef="interfaceId">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>interfaceId</th>
+            <td mat-cell *matCellDef="let element">{{element.interfaceId==null? 'N/A':element.interfaceId}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="interfaceName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>interfaceName</th>
+        <td mat-cell *matCellDef="let element">{{element.interfaceName==null? 'N/A':element.interfaceName}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>status</th>
+            <td mat-cell *matCellDef="let element">{{element.status}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns:displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator [pageSize]="pagesize" [pageSizeOptions]="[9,18,30]"showFirstLastButtons></mat-paginator> -->
+
+
+  
+      <div>
+            <button mat-raised-button class="button" (click)="openDialogCreate()" color="primary">Interface
+                <mat-icon>person</mat-icon>
+            </button>
+        </div>
+<div>
+    <div *ngFor="let user of users">  
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>id:{{user.interfaceId}} </mat-card-title>
+                <mat-card-subtitle>
+                    <b>InterfaceCode:</b>{{user.interfaceCode}}<br>
+                    <b>InterfaceDesc:</b>{{user.interfaceDesc}}<br>
+                    <b>InterfaceName:</b>{{user.interfaceName}}<br>
+                    <b>Status:</b>{{user.status}}
+                </mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+    </div>
+
+    <div *ngIf="users?.length>pageSize">
+        <mat-paginator [pageSize]="pageSize" [length]="users?.length" [pageIndex]="initPage" showFirstLastButtons></mat-paginator>
+        <!-- (page)="getData($event)" -->
+    
+    </div>
+</div>

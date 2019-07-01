@@ -1,0 +1,31 @@
+<div mat-dialog-content>
+    <form [formGroup]="interForm">
+            <h3 class="text-center text-primary">Create Interface</h3>
+       <mat-form-field>
+          <input matInput placeholder="interfaceCode" formControlName="interfaceCode">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="interfaceDesc" formControlName="interfaceDesc">
+         </mat-form-field>
+
+         <mat-form-field> 
+          <input matInput placeholder="interfaceId" formControlName="interfaceId">
+         </mat-form-field>
+
+         <mat-form-field>
+           <input matInput placeholder="interfaceName" formControlName="interfaceName">
+         </mat-form-field>
+
+         <mat-form-field>
+            <input matInput placeholder="status" formControlName="status">
+         </mat-form-field>
+    
+    </form>
+</div>
+
+<div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">Cancel</button>
+        <button mat-raised-button [disabled]="!interForm.valid" (click)="getputdata()" class="ml-5 text-right text-success"  mat-button
+            [mat-dialog-close]="interForm.value">Save</button>
+</div>

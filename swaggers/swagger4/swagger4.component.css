@@ -1,0 +1,16 @@
+/* table{
+    width: 100%;
+    margin-top: 20%;
+} */
+
+
+.example-card{
+    width: 300px;
+    margin: 2rem;
+    float: left;
+    background:silver;
+}
+.button{
+    left:40%;
+    margin: 1rem;
+}
